@@ -45,6 +45,7 @@
 				<div class="col">
 					<h1>Title</h1>
 					<p>Content</p>
+					<p><a href="#modal-id" class="popup-form">Модальное окно с формой</a></p>
 				</div>
 			</div>
 		</div>
@@ -63,14 +64,11 @@
 
 
 	<!-- BUTTON SCROOL-TOP -->
-	<a href="#" class="btn btn-top">Наверх</a>
-
+	<a href="#" class="btn btn-top"><i class="fas fa-arrow-up"></i> Наверх</a>
 
 	<!-- MODALS -->
-
-	<div class="mfp-hide form-modal" id="modal-id">
-		<div class="loading"></div>
-		<form id="form_id" method="POST" action="">
+	<div class="form form-modal mfp-hide mfp-with-anim" id="modal-id">
+		<form id="form_id">
 			<h4 class="form-title">Наименование формы</h4>
 			<div class="form-item">
 				<label for="form_name">Ваше имя <span>*</span></label>
@@ -82,13 +80,14 @@
 			</div>
 			<div class="form-item">
 				<label for="form_email">E-mail</label>
-				<input type="text" name="form_email" minlength="2" maxlength="50" id="form_email">
+				<input type="email" name="form_email" minlength="2" maxlength="50" id="form_email">
 			</div>
 			<input type="hidden" name="formname" value="formname">
-			<div class="form-item">
-				<input type="submit" value="Отправить" class="btn" name="form_send">
+			<div class="form-button">
+				<input type="submit" value="Отправить" class="btn" name="form_send" onclick="sendForm('#form_id')">
 			</div>
 			<span class="form-text">Нажимая кнопку "Отправить" вы даёте своё согласие на обработку персональных данных в соответствии с <a href="#politic">политикой конфиденциальности</a></span>
+			<div class="loading"></div>
 			<div class="form-success"></div>
 		</form>
 	</div>

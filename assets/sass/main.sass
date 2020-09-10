@@ -1,5 +1,78 @@
 *, *:before, *:after
 	box-sizing: border-box
 
+body
+	font-size: 16px
+
+main
+	min-height: 1500px
+
+
+@import "form"
 @import "header"
 @import "footer"
+
+// btn-top
+.btn-top
+	display: none
+	position: fixed
+	right: 10px
+	bottom: 10px
+	padding: 10px
+	text-decoration: none
+	color: blue
+	&:hover
+		color: red
+
+
+// form modal
+.form-modal
+	position: relative
+	width: 100%
+	max-width: 600px
+	margin: 0 auto
+
+
+// zoom анимация magnific popup
+.mfp-zoom-in
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.2s ease-in-out
+		transform: scale(0.8)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	/* animate in */
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg
+			opacity: 0.8
+	/* animate out */
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(0.8)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
+
+// ajax loading
+.loading
+	display: none
+	width: 32px
+	height: 32px
+	margin: 20px auto
+	border: 4px rgba(#555, 0.25) solid
+	border-top: 4px rgba(#555, 1) solid
+	border-radius: 50%
+	animation: spCircRot .8s infinite linear
+@keyframes spCircRot
+	from
+		transform: rotate(0deg)
+	to
+		transform: rotate(359deg)
+.loading.active
+	display: block
+

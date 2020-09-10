@@ -1,10 +1,15 @@
 <?php
 
-// php script: sending a letter from the feedback form
+sleep(1);
+if (count($_POST > 0))
+{
+	
 
-// view post
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+	echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";
+
+
+}
 
 ?>

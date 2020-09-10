@@ -4,6 +4,54 @@ $(document).ready(function(){
 
 
 	
+	// ------------ модальные окна ------------ 
+
+	// форма
+	$('.popup-form').magnificPopup({
+		type:'inline',
+		removalDelay: 500,
+		mainClass: 'mfp-zoom-in',
+		midClick: true
+	});
+
+	// увеличенное изображение
+	$('.popup-img').magnificPopup({
+		type: 'image',
+		mainClass: 'mfp-zoom-in',
+		removalDelay: 500,
+		closeOnContentClick: true,
+		zoom: {
+			enabled: true,
+		},
+		midClick: true
+	});
+
+	// галерея
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+    },
+    midClick: true
+	});
+
+
+	// ------------ слайдеры ------------
+
+	$('.slider').slick({
+		arrows: true, //
+		dots: true,
+		slidesToShow: 1,
+		infinite: true,
+		//centerMode: true,
+		//variableWidth: false,
+		//autoplay: true,
+		//autoplaySpeed: 2000,
+		//fade: true
+	});
+
+
 	// ------------ кнопка наверх ------------ 
 
 	// появление кнопки
@@ -33,16 +81,12 @@ $(document).ready(function(){
 
 
 
-
-
-
 // Отправка формы обратной связи
 
 function sendForm(FormID)
 {
 	$(FormID).unbind();
 	var loading_wrap = $('.loading');
-
 	$(FormID).submit(function()
 	{
 		var data = $(this).serialize();
@@ -59,7 +103,7 @@ function sendForm(FormID)
 				setTimeout(function(){
 					$(FormID).trigger('reset');
 					$.magnificPopup.close();
-				}, 2000);
+				}, 3000);
 			}
 		});
 		return false;
