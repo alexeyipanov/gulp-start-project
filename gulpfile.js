@@ -17,6 +17,7 @@ function css() {
 	.pipe(sass())
 	.pipe(autoprefixer({ cascade: false, grid: true }))
 	.pipe(concat('main.css'))
+	.pipe(dest("./assets/css/"))
 	.pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } ))
 	.pipe(concat('main.min.css'))
 	.pipe(dest("./assets/css/"))
@@ -75,6 +76,7 @@ function buildTask() {
 		'./assets/css/**/*.min.css',
 		'./assets/js/**/*.min.js',
 		'./assets/images/dest/**/*',
+		'./assets/libs/**/*',
 		'./**/*.html',
 		], { base: './' }) // Параметр "base" сохраняет структуру проекта при копировании
 	.pipe(dest('dist'))
