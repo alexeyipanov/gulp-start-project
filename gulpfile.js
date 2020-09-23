@@ -77,7 +77,7 @@ function buildTask() {
 		'./assets/js/**/*.min.js',
 		'./assets/images/dest/**/*',
 		'./assets/libs/**/*',
-		'./**/*.html',
+		'./*.html',
 		], { base: './' }) // Параметр "base" сохраняет структуру проекта при копировании
 	.pipe(dest('dist'))
 }
